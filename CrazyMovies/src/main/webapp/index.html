@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <title>Crazy Movies</title>
+	<base href="/CrazyMovies/">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	
+	<script src="//cdn.auth0.com/js/lock-8.1.min.js"></script>
+	<script src="lib/angular2-polyfills.js"></script>
+    <script src="lib/system.src.js"></script>
+    <script src="lib/Rx.js"></script>
+    <script src="lib/angular2.dev.js"></script>
+	<link rel="icon" type="image/gif" href="./app/images/FilmRoll.gif">
+	<script src="lib/router.dev.js"></script>
+	<script src="lib/http.dev.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <!-- 2. Configure SystemJS -->
+    <script>
+        System.config({
+            packages: {
+                app: {
+                    format: 'register',
+                    defaultExtension: 'js'
+                },
+                "angular2-jwt": {
+                    "defaultExtension": "js"
+                }
+            },
+            map: {
+                "angular2-jwt": "lib/angular2-jwt.js"
+            }
+        });
+	
+      System.import('/CrazyMovies/app/main')
+            .then(null, console.error.bind(console));
+    </script>
+  </head>
+
+  <!-- 3. Display the application -->
+  <body>
+    <app>Loading...</app>
+  </body>
+</html>
